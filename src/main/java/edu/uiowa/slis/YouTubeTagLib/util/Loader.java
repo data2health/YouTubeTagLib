@@ -260,6 +260,15 @@ public class Loader {
 	count = stmt.executeUpdate();
 	stmt.close();
 	logger.info("new thumbnails: " + count);
+
+	stmt = conn.prepareStatement("insert into youtube.tag"
+		+ " select video_id,seqnum,tag"
+		+ " from youtube.tag_staging"
+		+ " where not exists (select video_id from youtube.tag where tag.video_id = tag_staging.video_id)"
+		+ "   and exists (select video_id from youtube.video where video.video_id = tag_staging.video_id)");
+	count = stmt.executeUpdate();
+	stmt.close();
+	logger.info("new tags: " + count);
     }
 
     public static void video(String list) throws JSONException, MalformedURLException, IOException, SQLException, InterruptedException {

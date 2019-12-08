@@ -34,6 +34,12 @@ src/main/java/edu/uiowa/slis/YouTubeTagLib/playlistItem/PlaylistItemDeleter.java
 src/main/java/edu/uiowa/slis/YouTubeTagLib/playlistItem/PlaylistItemIterator.java -text
 src/main/java/edu/uiowa/slis/YouTubeTagLib/playlistItem/PlaylistItemPlaylistId.java -text
 src/main/java/edu/uiowa/slis/YouTubeTagLib/playlistItem/PlaylistItemVideoId.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/Tag.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/TagDeleter.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/TagIterator.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/TagSeqnum.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/TagTag.java -text
+src/main/java/edu/uiowa/slis/YouTubeTagLib/tag/TagVideoId.java -text
 src/main/java/edu/uiowa/slis/YouTubeTagLib/util/Loader.java -text
 src/main/java/edu/uiowa/slis/YouTubeTagLib/util/LocalProperties.java -text
 src/main/java/edu/uiowa/slis/YouTubeTagLib/util/PropertyLoader.java -text

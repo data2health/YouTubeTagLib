@@ -788,6 +788,114 @@
 		</attribute>
 	</tag>
 
+	<tag>
+		<name>foreachTag</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.TagIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>seqnum</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>tag</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.Tag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>seqnum</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deleteTag</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.TagDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>seqnum</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>tagVideoId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.TagVideoId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>tagSeqnum</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.TagSeqnum</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>seqnum</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>tagTag</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.tag.TagTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>tag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
 	<function>
 		<name>channelCount</name>
 		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelIterator</function-class>
@@ -1068,5 +1176,41 @@
 		<name>playlistItemVideoIdValue</name>
 		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItem</function-class>
 		<function-signature>java.lang.String videoIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>tagExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.TagIterator</function-class>
+		<function-signature>java.lang.String tagExists(java.lang.String, java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>tagCountByVideo</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.TagIterator</function-class>
+		<function-signature>java.lang.String tagCountByVideo(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoHasTag</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.TagIterator</function-class>
+		<function-signature>java.lang.Boolean videoHasTag(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>tagVideoIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.Tag</function-class>
+		<function-signature>java.lang.String videoIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>tagSeqnumValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.Tag</function-class>
+		<function-signature>java.lang.Long seqnumValue()</function-signature>
+	</function>
+
+	<function>
+		<name>tagTagValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.tag.Tag</function-class>
+		<function-signature>java.lang.String tagValue()</function-signature>
 	</function>
 </taglib>
