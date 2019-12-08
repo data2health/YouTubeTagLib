@@ -18,10 +18,10 @@ select
     (((contents->>'statistics')::jsonb)->>'dislikeCount')::int as dislike_count,
     (((contents->>'statistics')::jsonb)->>'favoriteCount')::int as favorite_count,
     (((contents->>'statistics')::jsonb)->>'commentCount')::int as comment_count,
-    contents->>'player' as player
+    ((contents->>'player')::jsonb)->>'embedHtml' as player
 from raw_video;
 
-create view tag as
+create view tag_staging as
 select
     video_id,
     t.seqnum,
