@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="1.4.2">
+<database-model alias="" author="" begin-script="" end-script="" name="myModel3" remarks="" sql-dialect-id="jp.azzurri.clay.dialect.Postgre_7_3_Dialect" uid="34dcf4d9:12c7933ea8c:-7fe2" version="1.0">
+<database-model-description/>
+<schema-list>
+<schema alias="" name="RENAME_ME" remarks="" uid="34dcf4d9:12c7933ea8c:-7fdf">
+<schema-description/>
+<domain-list/>
+<table-list/>
+</schema>
+<schema alias="" name="youtube" remarks="" uid="5c64d8d1:16ee2b731a4:-7ffb">
+<schema-description/>
+<domain-list/>
+<table-list>
+<table alias="" name="channel" remarks="" uid="5c64d8d1:16ee2b731a4:-7ffa">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="146" y="158"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="true" name="channel_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff8">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="channel_title" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff7">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="1" decimal-digits="0" default-value="" mandatory="false" name="relevant" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff6">
+<column-description/>
+<data-type jdbc-type="16" name="BOOL" selected-variant-pattern="BOOL">
+<variant type-name-pattern="BOOL"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="channel_pkey" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff9">
+<primary-key-description/>
+<primary-key-column name="channel_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="playlist" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff5">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="277" y="339"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="true" name="playlist_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff3">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="channel_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff2">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="etag" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff1">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="29" decimal-digits="6" default-value="" mandatory="false" name="published" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff0">
+<column-description/>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant type-name-pattern="TIMESTAMP WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="title" remarks="" uid="5c64d8d1:16ee2b731a4:-7fef">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="description" remarks="" uid="5c64d8d1:16ee2b731a4:-7fee">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="1" decimal-digits="0" default-value="" mandatory="false" name="relevant" remarks="" uid="5c64d8d1:16ee2b731a4:-7fed">
+<column-description/>
+<data-type jdbc-type="16" name="BOOL" selected-variant-pattern="BOOL">
+<variant type-name-pattern="BOOL"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="playlist_pkey" remarks="" uid="5c64d8d1:16ee2b731a4:-7ff4">
+<primary-key-description/>
+<primary-key-column name="playlist_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_playlist_1" on-delete="" on-update="" referenced-key="channel_pkey" referenced-table="channel" referenced-table-schema="youtube" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="" uid="5c64d8d1:16ee2b731a4:-7f9f">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="channel_id" referenced-key-column-name="channel_id"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="video" remarks="" uid="5c64d8d1:16ee2b731a4:-7fec">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="668" y="89"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="true" name="video_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7fea">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="29" decimal-digits="6" default-value="" mandatory="false" name="published" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe9">
+<column-description/>
+<data-type jdbc-type="93" name="TIMESTAMP" selected-variant-pattern="TIMESTAMP(%p)">
+<variant type-name-pattern="TIMESTAMP"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p)"/>
+<variant type-name-pattern="TIMESTAMP WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITH TIME ZONE"/>
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="TIMESTAMP(%p) WITHOUT TIME ZONE"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="49" decimal-digits="6" default-value="" mandatory="false" name="duration" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe8">
+<column-description/>
+<data-type jdbc-type="1111" literal-prefix="'" literal-suffix="'" name="INTERVAL" selected-variant-pattern="INTERVAL(%p)">
+<variant precision-max="9" precision-min="1" precision-variable="%p" type-name-pattern="INTERVAL(%p)"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="1" decimal-digits="0" default-value="" mandatory="false" name="caption" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe7">
+<column-description/>
+<data-type jdbc-type="16" name="BOOL" selected-variant-pattern="BOOL">
+<variant type-name-pattern="BOOL"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="definition" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe6">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="title" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe5">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="description" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe4">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="19" decimal-digits="0" default-value="" mandatory="false" name="view_count" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe3">
+<column-description/>
+<data-type jdbc-type="-5" name="INT8" selected-variant-pattern="INT8">
+<variant type-name-pattern="INT8"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="like_count" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe2">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="dislike_count" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe1">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="favorite_count" remarks="" uid="5c64d8d1:16ee2b731a4:-7fe0">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="comment_count" remarks="" uid="5c64d8d1:16ee2b731a4:-7fdf">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="player" remarks="" uid="5c64d8d1:16ee2b731a4:-7fde">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="1" decimal-digits="0" default-value="" mandatory="false" name="relevant" remarks="" uid="5c64d8d1:16ee2b731a4:-7fdd">
+<column-description/>
+<data-type jdbc-type="16" name="BOOL" selected-variant-pattern="BOOL">
+<variant type-name-pattern="BOOL"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="video_pkey" remarks="" uid="5c64d8d1:16ee2b731a4:-7feb">
+<primary-key-description/>
+<primary-key-column name="video_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list/>
+<index-list/>
+</table>
+<table alias="" name="video_thumbnail" remarks="" uid="5c64d8d1:16ee2b731a4:-7fdc">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="1047" y="199"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="true" name="video_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7fda">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="true" name="size" remarks="" uid="5c64d8d1:16ee2b731a4:-7fd9">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="2147483647" decimal-digits="0" default-value="" mandatory="false" name="url" remarks="" uid="5c64d8d1:16ee2b731a4:-7fd8">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="width" remarks="" uid="5c64d8d1:16ee2b731a4:-7fd7">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="10" decimal-digits="0" default-value="" mandatory="false" name="height" remarks="" uid="5c64d8d1:16ee2b731a4:-7fd6">
+<column-description/>
+<data-type jdbc-type="4" name="INT4" selected-variant-pattern="INT4">
+<variant type-name-pattern="INT4"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="video_thumbnail_pkey" remarks="" uid="5c64d8d1:16ee2b731a4:-7fdb">
+<primary-key-description/>
+<primary-key-column name="video_id"/>
+<primary-key-column name="size"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_video_thumbnail_1" on-delete="" on-update="" referenced-key="video_pkey" referenced-table="video" referenced-table-schema="youtube" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="" uid="5c64d8d1:16ee2b731a4:-7f2f">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="video_id" referenced-key-column-name="video_id"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+<table alias="" name="playlist_item" remarks="" uid="5c64d8d1:16ee2b731a4:-7f23">
+<table-description/>
+<table-figure-bounds height="-1" width="-1" x="616" y="449"/>
+<column-list>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="playlist_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7f1f">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+<column alias="" auto-increment="false" column-size="0" decimal-digits="0" default-value="" mandatory="true" name="video_id" remarks="" uid="5c64d8d1:16ee2b731a4:-7f1e">
+<column-description/>
+<data-type jdbc-type="-1" literal-prefix="'" literal-suffix="'" name="TEXT" selected-variant-pattern="TEXT">
+<variant type-name-pattern="TEXT"/>
+</data-type>
+</column>
+</column-list>
+<primary-key alias="" name="PK_PLAYLIST_ITEM" remarks="" uid="5c64d8d1:16ee2b731a4:-7f22">
+<primary-key-description/>
+<primary-key-column name="playlist_id"/>
+<primary-key-column name="video_id"/>
+</primary-key>
+<unique-key-list/>
+<foreign-key-list>
+<foreign-key alias="" name="FK_TABLE_1_1" on-delete="" on-update="" referenced-key="playlist_pkey" referenced-table="playlist" referenced-table-schema="youtube" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="" uid="5c64d8d1:16ee2b731a4:-7ee2">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="playlist_id" referenced-key-column-name="playlist_id"/>
+</foreign-key>
+<foreign-key alias="" name="FK_TABLE_1_2" on-delete="" on-update="" referenced-key="video_pkey" referenced-table="video" referenced-table-schema="youtube" remarks="" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="" uid="5c64d8d1:16ee2b731a4:-7e8f">
+<foreign-key-description/>
+<foreign-key-figure>
+<fk-fig-bendpoint-list/>
+</foreign-key-figure>
+<foreign-key-column column-name="video_id" referenced-key-column-name="video_id"/>
+</foreign-key>
+</foreign-key-list>
+<index-list/>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+</clay-model>
