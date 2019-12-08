@@ -3,7 +3,1070 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
 	version="2.0">
+	<tlib-version>2.1</tlib-version>
+	<short-name>simp</short-name>
+	<uri>http://icts.uiowa.edu/YouTubeTagLib</uri>
 
-<tlib-version>2.1</tlib-version>
-<short-name>name</short-name>
+	<tag>
+		<name>getSequenceNumber</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.Sequence</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>dbtest</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.DBTest</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>foreachChannel</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>channel</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.Channel</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deleteChannel</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>channelChannelId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelChannelId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>channelChannelTitle</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelChannelTitle</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>channelTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>channelRelevant</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelRelevant</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>relevant</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPlaylist</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlist</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deletePlaylist</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistPlaylistId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistPlaylistId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistChannelId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistChannelId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistEtag</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistEtag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>etag</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistPublished</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistPublished</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>published</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>dateStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>timeStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>pattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistPublishedToNow</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistPublishedToNow</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>published</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistTitle</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistTitle</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistDescription</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistDescription</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>description</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistRelevant</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistRelevant</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>relevant</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachVideo</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>video</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.Video</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deleteVideo</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoVideoId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoVideoId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoPublished</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoPublished</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>published</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>dateStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>timeStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>pattern</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoPublishedToNow</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoPublishedToNow</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>published</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoDuration</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoDuration</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>duration</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoCaption</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoCaption</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>caption</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoDefinition</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoDefinition</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>definition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoTitle</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoTitle</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoDescription</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoDescription</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>description</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoViewCount</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoViewCount</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>viewCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoLikeCount</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoLikeCount</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>likeCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoDislikeCount</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoDislikeCount</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>dislikeCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoFavoriteCount</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoFavoriteCount</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>favoriteCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoCommentCount</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoCommentCount</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>commentCount</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoPlayer</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoPlayer</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>player</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoRelevant</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.video.VideoRelevant</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>relevant</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachVideoThumbnail</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnail</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deleteVideoThumbnail</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnailVideoId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailVideoId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnailSize</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailSize</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnailUrl</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailUrl</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnailWidth</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailWidth</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>videoThumbnailHeight</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailHeight</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPlaylistItem</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>sortCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>limitCriteria</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>usePlaylist</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>useVideo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<name>playlistItem</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItem</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>deletePlaylistItem</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemDeleter</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistItemPlaylistId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemPlaylistId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>playlistId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>playlistItemVideoId</name>
+		<tag-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemVideoId</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>videoId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<function>
+		<name>channelCount</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelIterator</function-class>
+		<function-signature>java.lang.String channelCount()</function-signature>
+	</function>
+
+	<function>
+		<name>channelExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.ChannelIterator</function-class>
+		<function-signature>java.lang.String channelExists(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>channelChannelIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.Channel</function-class>
+		<function-signature>java.lang.String channelIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>channelChannelTitleValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.Channel</function-class>
+		<function-signature>java.lang.String channelTitleValue()</function-signature>
+	</function>
+
+	<function>
+		<name>channelRelevantValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.channel.Channel</function-class>
+		<function-signature>java.lang.Boolean relevantValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistIterator</function-class>
+		<function-signature>java.lang.String playlistExists(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistCountByChannel</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistIterator</function-class>
+		<function-signature>java.lang.String playlistCountByChannel(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>channelHasPlaylist</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.PlaylistIterator</function-class>
+		<function-signature>java.lang.Boolean channelHasPlaylist(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistPlaylistIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.String playlistIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistChannelIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.String channelIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistEtagValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.String etagValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistPublishedValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.Date publishedValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistTitleValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.String titleValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistDescriptionValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.String descriptionValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistRelevantValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlist.Playlist</function-class>
+		<function-signature>java.lang.Boolean relevantValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoCount</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.VideoIterator</function-class>
+		<function-signature>java.lang.String videoCount()</function-signature>
+	</function>
+
+	<function>
+		<name>videoExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.VideoIterator</function-class>
+		<function-signature>java.lang.String videoExists(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoVideoIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.String videoIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoPublishedValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Date publishedValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoDurationValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Object durationValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoCaptionValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Boolean captionValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoDefinitionValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.String definitionValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoTitleValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.String titleValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoDescriptionValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.String descriptionValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoViewCountValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Long viewCountValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoLikeCountValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Integer likeCountValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoDislikeCountValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Integer dislikeCountValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoFavoriteCountValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Integer favoriteCountValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoCommentCountValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Integer commentCountValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoPlayerValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.String playerValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoRelevantValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.video.Video</function-class>
+		<function-signature>java.lang.Boolean relevantValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailIterator</function-class>
+		<function-signature>java.lang.String videoThumbnailExists(java.lang.String, java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailCountByVideo</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailIterator</function-class>
+		<function-signature>java.lang.String videoThumbnailCountByVideo(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoHasVideoThumbnail</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnailIterator</function-class>
+		<function-signature>java.lang.Boolean videoHasVideoThumbnail(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailVideoIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</function-class>
+		<function-signature>java.lang.String videoIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailSizeValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</function-class>
+		<function-signature>java.lang.String sizeValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailUrlValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</function-class>
+		<function-signature>java.lang.String urlValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailWidthValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</function-class>
+		<function-signature>java.lang.Integer widthValue()</function-signature>
+	</function>
+
+	<function>
+		<name>videoThumbnailHeightValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.videoThumbnail.VideoThumbnail</function-class>
+		<function-signature>java.lang.Integer heightValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistItemExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.String playlistItemExists(java.lang.String, java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistItemCountByPlaylist</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.String playlistItemCountByPlaylist(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistHasPlaylistItem</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.Boolean playlistHasPlaylistItem(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistItemCountByVideo</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.String playlistItemCountByVideo(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>videoHasPlaylistItem</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.Boolean videoHasPlaylistItem(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistVideoExists</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItemIterator</function-class>
+		<function-signature>java.lang.Boolean playlistVideoExists(java.lang.String, java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>playlistItemPlaylistIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItem</function-class>
+		<function-signature>java.lang.String playlistIdValue()</function-signature>
+	</function>
+
+	<function>
+		<name>playlistItemVideoIdValue</name>
+		<function-class>edu.uiowa.slis.YouTubeTagLib.playlistItem.PlaylistItem</function-class>
+		<function-signature>java.lang.String videoIdValue()</function-signature>
+	</function>
 </taglib>
