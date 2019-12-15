@@ -245,8 +245,7 @@ public class Loader {
 	stmt = conn.prepareStatement("insert into youtube.video"
 		+ " select distinct video_id,published,duration,caption,definition,title,description,view_count,like_count,dislike_count,favorite_count,comment_count,player"
 		+ " from youtube.video_staging"
-		+ " where not exists (select video_id from youtube.video where video.video_id = video_staging.video_id)"
-		+ "   and exists (select video_id from youtube.playlist_item natural join youtube.playlist where playlist.relevant and playlist_item.video_id = video_staging.video_id)");
+		+ " where not exists (select video_id from youtube.video where video.video_id = video_staging.video_id)");
 	count = stmt.executeUpdate();
 	stmt.close();
 	logger.info("new videos: " + count);
@@ -255,17 +254,15 @@ public class Loader {
 		+ " select video_id,size,url,width,height"
 		+ " from youtube.video_thumbnail_staging"
 		+ " where url is not null"
-		+ "   and not exists (select video_id from youtube.video_thumbnail where video_thumbnail.video_id = video_thumbnail_staging.video_id)"
-		+ "   and exists (select video_id from youtube.video where video.video_id = video_thumbnail_staging.video_id)");
+		+ "   and not exists (select video_id from youtube.video_thumbnail where video_thumbnail.video_id = video_thumbnail_staging.video_id)");
 	count = stmt.executeUpdate();
 	stmt.close();
 	logger.info("new thumbnails: " + count);
 
 	stmt = conn.prepareStatement("insert into youtube.tag"
-		+ " select video_id,seqnum,tag"
+		+ " select distinct video_id,seqnum,tag"
 		+ " from youtube.tag_staging"
-		+ " where not exists (select video_id from youtube.tag where tag.video_id = tag_staging.video_id)"
-		+ "   and exists (select video_id from youtube.video where video.video_id = tag_staging.video_id)");
+		+ " where not exists (select video_id from youtube.tag where tag.video_id = tag_staging.video_id and tag.seqnum = tag_staging.seqnum)");
 	count = stmt.executeUpdate();
 	stmt.close();
 	logger.info("new tags: " + count);
