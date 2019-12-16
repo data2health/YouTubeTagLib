@@ -30,6 +30,7 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
     ResultSet rs = null;
     String sortCriteria = null;
     int limitCriteria = 0;
+    String filterCriteria = null;
     String var = null;
     int rsCount = 0;
 
@@ -166,6 +167,7 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
             int webapp_keySeq = 1;
             stat = getConnection().prepareStatement("SELECT youtube.playlist_item.playlist_id, youtube.playlist_item.video_id from " + generateFromClause() + " where 1=1"
                                                         + generateJoinCriteria()
+                                                        + generateFilterCriteria()
                                                         + (playlistId == null ? "" : " and playlist_id = ?")
                                                         + (videoId == null ? "" : " and video_id = ?")
                                                         + " order by " + generateSortCriteria() + generateLimitCriteria());
@@ -202,9 +204,9 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
     private String generateJoinCriteria() {
        StringBuffer theBuffer = new StringBuffer();
        if (usePlaylist)
-          theBuffer.append(" and playlist.playlistId = playlist_item.null");
+          theBuffer.append(" and playlist.playlist_id = playlist_item.playlist_id");
        if (useVideo)
-          theBuffer.append(" and video.videoId = playlist_item.null");
+          theBuffer.append(" and video.video_id = playlist_item.video_id");
 
       return theBuffer.toString();
     }
@@ -220,6 +222,14 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
     private String generateLimitCriteria() {
         if (limitCriteria > 0) {
             return " limit " + limitCriteria;
+        } else {
+            return "";
+        }
+    }
+
+    private String generateFilterCriteria() {
+        if (filterCriteria != null) {
+            return " and " + filterCriteria;
         } else {
             return "";
         }
@@ -264,6 +274,7 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
         this.rs = null;
         this.stat = null;
         this.sortCriteria = null;
+        this.filterCriteria = null;
         this.var = null;
         this.rsCount = 0;
     }
@@ -282,6 +293,14 @@ public class PlaylistItemIterator extends YouTubeTagLibBodyTagSupport {
 
     public void setLimitCriteria(int limitCriteria) {
         this.limitCriteria = limitCriteria;
+    }
+
+    public String getFilterCriteria() {
+        return filterCriteria;
+    }
+
+    public void setFilterCriteria(String filterCriteria) {
+        this.filterCriteria = filterCriteria;
     }
 
     public String getVar() {

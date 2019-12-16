@@ -48,6 +48,12 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 
+        <attribute>
+            <name>filterCriteria</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
 		<attribute>
 			<name>channelId</name>
 			<required>false</required>
@@ -137,6 +143,12 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
+
+        <attribute>
+            <name>filterCriteria</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
 
 		<attribute>
 			<name>playlistId</name>
@@ -311,6 +323,12 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
+
+        <attribute>
+            <name>filterCriteria</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
 
 		<attribute>
 			<name>videoId</name>
@@ -701,6 +719,12 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
+
+        <attribute>
+            <name>filterCriteria</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
 
 		<attribute>
 			<name>playlistId</name>

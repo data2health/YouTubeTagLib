@@ -35,6 +35,7 @@ public class PlaylistIterator extends YouTubeTagLibBodyTagSupport {
     ResultSet rs = null;
     String sortCriteria = null;
     int limitCriteria = 0;
+    String filterCriteria = null;
     String var = null;
     int rsCount = 0;
 
@@ -105,6 +106,7 @@ public class PlaylistIterator extends YouTubeTagLibBodyTagSupport {
             int webapp_keySeq = 1;
             stat = getConnection().prepareStatement("SELECT youtube.playlist.playlist_id from " + generateFromClause() + " where 1=1"
                                                         + generateJoinCriteria()
+                                                        + generateFilterCriteria()
                                                         + (channelId == null ? "" : " and channel_id = ?")
                                                         + " order by " + generateSortCriteria() + generateLimitCriteria());
             if (channelId != null) stat.setString(webapp_keySeq++, channelId);
@@ -151,6 +153,14 @@ public class PlaylistIterator extends YouTubeTagLibBodyTagSupport {
         }
     }
 
+    private String generateFilterCriteria() {
+        if (filterCriteria != null) {
+            return " and " + filterCriteria;
+        } else {
+            return "";
+        }
+    }
+
     public int doAfterBody() throws JspTagException {
         try {
             if (rs.next()) {
@@ -188,6 +198,7 @@ public class PlaylistIterator extends YouTubeTagLibBodyTagSupport {
         this.rs = null;
         this.stat = null;
         this.sortCriteria = null;
+        this.filterCriteria = null;
         this.var = null;
         this.rsCount = 0;
     }
@@ -206,6 +217,14 @@ public class PlaylistIterator extends YouTubeTagLibBodyTagSupport {
 
     public void setLimitCriteria(int limitCriteria) {
         this.limitCriteria = limitCriteria;
+    }
+
+    public String getFilterCriteria() {
+        return filterCriteria;
+    }
+
+    public void setFilterCriteria(String filterCriteria) {
+        this.filterCriteria = filterCriteria;
     }
 
     public String getVar() {

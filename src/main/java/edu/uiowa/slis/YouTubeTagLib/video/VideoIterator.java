@@ -41,6 +41,7 @@ public class VideoIterator extends YouTubeTagLibBodyTagSupport {
     ResultSet rs = null;
     String sortCriteria = null;
     int limitCriteria = 0;
+    String filterCriteria = null;
     String var = null;
     int rsCount = 0;
 
@@ -98,6 +99,7 @@ public class VideoIterator extends YouTubeTagLibBodyTagSupport {
             int webapp_keySeq = 1;
             stat = getConnection().prepareStatement("SELECT youtube.video.video_id from " + generateFromClause() + " where 1=1"
                                                         + generateJoinCriteria()
+                                                        + generateFilterCriteria()
                                                         + " order by " + generateSortCriteria() + generateLimitCriteria());
             rs = stat.executeQuery();
 
@@ -142,6 +144,14 @@ public class VideoIterator extends YouTubeTagLibBodyTagSupport {
         }
     }
 
+    private String generateFilterCriteria() {
+        if (filterCriteria != null) {
+            return " and " + filterCriteria;
+        } else {
+            return "";
+        }
+    }
+
     public int doAfterBody() throws JspTagException {
         try {
             if (rs.next()) {
@@ -179,6 +189,7 @@ public class VideoIterator extends YouTubeTagLibBodyTagSupport {
         this.rs = null;
         this.stat = null;
         this.sortCriteria = null;
+        this.filterCriteria = null;
         this.var = null;
         this.rsCount = 0;
     }
@@ -197,6 +208,14 @@ public class VideoIterator extends YouTubeTagLibBodyTagSupport {
 
     public void setLimitCriteria(int limitCriteria) {
         this.limitCriteria = limitCriteria;
+    }
+
+    public String getFilterCriteria() {
+        return filterCriteria;
+    }
+
+    public void setFilterCriteria(String filterCriteria) {
+        this.filterCriteria = filterCriteria;
     }
 
     public String getVar() {
